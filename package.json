@@ -1,0 +1,29 @@
+{
+  "name": "@zaiusinc/web-sdk",
+  "version": "0.0.1",
+  "description": "Wraps the Zaius Web SDK to make it easier to use in modern SPAs",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Zaius, Inc.",
+  "repository": "https://github.com/ZaiusInc/web-sdk-wrapper",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "@rollup/plugin-babel": "^5.0.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-typescript": "^4.1.1",
+    "@zaiusinc/tslint-presets": "^1.1.0",
+    "prettier": "^2.0.5",
+    "rollup": "^2.10.2",
+    "rollup-plugin-terser": "^5.3.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.2"
+  }
+}
