@@ -1,12 +1,12 @@
 {
   "name": "@zaiusinc/web-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Wraps the Zaius Web SDK to make it easier to use in modern SPAs",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest"
+    "prepublishOnly": "rollup -c"
   },
   "author": "Zaius, Inc.",
   "repository": "https://github.com/ZaiusInc/web-sdk-wrapper",
@@ -25,5 +25,17 @@
     "rollup-plugin-terser": "^5.3.0",
     "tslint": "^6.1.2",
     "typescript": "^3.9.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
