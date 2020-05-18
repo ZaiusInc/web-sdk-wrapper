@@ -17,6 +17,9 @@ type ZaiusMethods =
   | 'initialize'
   | 'onload'
   | 'event'
+  | 'subscribe'
+  | 'unsubscribe'
+  | 'consent'
   | 'entity'
   | 'identify'
   | 'anonymize'
@@ -29,13 +32,16 @@ interface Zaius extends ZaiusBrowserSdk {
 const METHODS: ZaiusMethods[] = [
   'initialize',
   'event',
+  'subscribe',
+  'unsubscribe',
+  'consent',
   'entity',
   'identify',
   'anonymize',
   'dispatch',
 ];
 
-const zaiusProxies: Partial<Zaius> = [] as any;
+const zaiusProxies: Partial<Zaius> = {} as any;
 
 const zaiusDeferred: Partial<ZaiusBrowserSdk> = [] as any;
 
@@ -44,7 +50,7 @@ METHODS.forEach((method) => {
     ((window.zaius as any)[method] as any)(...args);
   };
   (zaiusDeferred as any)[method] = (...args: any[]) => {
-    window.zaius.push([method, ...args]);
+    (window.zaius as unknown as any[]).push([method, ...args]);
   };
 });
 
@@ -83,4 +89,4 @@ export function initialize({
 zaiusProxies['initialize'] = initialize;
 
 // tslint:disable-next-line: variable-name
-export const Zaius = zaiusProxies as Zaius;
+export const Zaius = zaiusProxies as ZaiusBrowserSdk;

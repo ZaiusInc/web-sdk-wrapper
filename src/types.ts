@@ -1,22 +1,54 @@
-export interface ZaiusBrowserSdk extends Array<any> {
+export interface ConsentData {
+  identifier_value: string;
+  consent?: boolean;
+  identifier_field_name?: string;
+  update_reason?: string;
+  update_ts?: number;
+  event_data?: {};
+}
+
+export interface ListSubscriptionObject {
+  list_id: string;
+  email: string;
+}
+
+export interface ZaiusBrowserSdk {
   /**
    * Used to send events to Zaius
-   * @param {string} eventType - The event type, e.g. "pageview"/"email"/"list"
-   * @param {object} [eventData] - An object containing additional fields to be sent along with the event
    */
   event: (eventType: string, eventData?: Record<string, any>) => void;
   /**
    * Used to send entity (Object) updates/upserts to Zaius
-   * @param {string} entityType - The name of the entity, e.g. "customer"
-   * @param {object} entityData - An object containing a representation of the object,
-   *    e.g. {email: "abc@def.com", first_name: "Abc Def"}
    */
   entity: (entityType: string, entityData: Record<string, any>) => void;
   /**
    * Used to identify a customer by customer_id
-   * @param {string} customerId
    */
   identify: (customerId: string) => void;
+  /**
+   * Used to subscribe an email address to a list
+   */
+  subscribe: (
+    subscriptionOptions: ListSubscriptionObject,
+    onSuccess: () => void,
+    onError: (message: string) => void
+  ) => void;
+  /**
+   * Used to unsubscribe an email address from a list
+   */
+  unsubscribe: (
+    subscriptionOptions: ListSubscriptionObject,
+    onSuccess: () => void,
+    onError: (message: string) => void
+  ) => void;
+  /**
+   * Update the subscription status for a given identifier
+   */
+  consent: (
+    consentObject: ConsentData,
+    onSuccess?: () => void,
+    onError?: (msg?: string) => void
+  ) => Promise<string | void>;
   /**
    * Refreshes the cookie identifier and removes any cached customer_id
    * meaning that subsequent events from this browser window shouldn't be
@@ -25,9 +57,6 @@ export interface ZaiusBrowserSdk extends Array<any> {
   anonymize: () => void;
   /**
    * Used to call a Zaius plugin
-   * @param {string} pluginName - The name of the plugin to invoke a function on
-   * @param {string} pluginFunctionName - The name of the function to invoke on the plugin
-   * @param {...object} args - Arguments to be passed to the plugin function
    */
   dispatch: (
     pluginName: string,
