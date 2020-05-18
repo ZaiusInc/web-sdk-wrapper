@@ -10,7 +10,7 @@ import { ZaiusBrowserSdk } from './types';
 interface InitializationOptions {
   trackerId: string;
   jsUrl?: string;
-  jsName?: 'zaius-min.js' | 'zaius.js' | string;
+  jsName?: 'zaius.js' | string;
 }
 
 type ZaiusMethods =
@@ -64,7 +64,7 @@ function setupWindowObject() {
  * @param InitializationOptions - The options to use for the initialization
  */
 export function initialize({
-  jsName = 'zaius-min.js',
+  jsName = 'zaius.js',
   jsUrl = 'd1igp3oop3iho5.cloudfront.net/v2',
   trackerId,
 }: InitializationOptions) {
