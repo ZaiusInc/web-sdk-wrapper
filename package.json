@@ -1,6 +1,6 @@
 {
   "name": "@zaiusinc/web-sdk",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Wraps the Zaius Web SDK to make it easier to use in modern SPAs",
   "main": "dist/index.js",
   "module": "dist/index.js",
