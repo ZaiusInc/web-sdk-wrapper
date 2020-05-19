@@ -26,6 +26,10 @@ export interface ZaiusBrowserSdk {
    */
   identify: (customerId: string) => void;
   /**
+   * Add a callback when Zaius has loaded, if Zaius is already loaded then the function will be immediately invoked.
+   */
+  onload: (fn: () => void) => void;
+  /**
    * Used to subscribe an email address to a list
    */
   subscribe: (

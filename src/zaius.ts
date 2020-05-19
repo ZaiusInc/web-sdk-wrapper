@@ -31,6 +31,7 @@ interface Zaius extends ZaiusBrowserSdk {
 
 const METHODS: ZaiusMethods[] = [
   'initialize',
+  'onload',
   'event',
   'subscribe',
   'unsubscribe',
