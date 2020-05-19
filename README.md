@@ -11,13 +11,13 @@ Please see our [documentation](https://docs.developers.zaius.com/web-sdk/) for m
 
 ## Getting Started
 
-To install using [yarn](https://yarnpkg):
+To install using [npm](https://npmjs.org):
 
 ```bash
 npm i @zaiusinc/web-sdk
 ```
 
-To install using [npm](https://npmjs.org):
+To install using [yarn](https://yarnpkg):
 
 ```bash
 yarn add @zaiusinc/web-sdk
