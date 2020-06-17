@@ -90,4 +90,4 @@ export function initialize({
 zaiusProxies['initialize'] = initialize;
 
 // tslint:disable-next-line: variable-name
-export const Zaius = zaiusProxies as ZaiusBrowserSdk;
+export const Zaius = zaiusProxies as Zaius;
