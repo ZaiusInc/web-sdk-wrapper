@@ -20,6 +20,7 @@ type ZaiusMethods =
   | 'subscribe'
   | 'unsubscribe'
   | 'consent'
+  | 'customer'
   | 'entity'
   | 'identify'
   | 'anonymize'
@@ -36,6 +37,7 @@ const METHODS: ZaiusMethods[] = [
   'subscribe',
   'unsubscribe',
   'consent',
+  'customer',
   'entity',
   'identify',
   'anonymize',
