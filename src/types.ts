@@ -14,6 +14,10 @@ export interface ListSubscriptionObject {
 
 export interface ZaiusBrowserSdk {
   /**
+   * Used to send a new customer or update to ODP
+   */
+  customer: (identifiers: Record<string, any>, attributes?: Record<string, any>) => void;
+  /**
    * Used to send events to Zaius
    */
   event: (eventType: string, eventData?: Record<string, any>) => void;
