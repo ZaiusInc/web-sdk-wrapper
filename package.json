@@ -10,7 +10,7 @@
   },
   "author": "Zaius, Inc.",
   "repository": "https://github.com/ZaiusInc/web-sdk-wrapper",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
