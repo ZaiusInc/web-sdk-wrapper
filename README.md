@@ -40,3 +40,6 @@ Zaius.event("<EVENT_TYPE>", {OTHER: "FIELDS"})
 ```
 
 > NOTE: If you're used to using the JS tag code from the integrations page in our web app, that fires a pageview event, this SDK _*will not*_ trigger a page view when the sdk is initialzied, and if you wish this to happen, you'll need to add a manual call to `Zaius.event('pageview')` after you initialize the SDK.
+
+## License
+This package is licensed under the Apache License 2.0.

@@ -1,6 +1,6 @@
 {
   "name": "@zaiusinc/web-sdk",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Wraps the Zaius Web SDK to make it easier to use in modern SPAs",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -10,7 +10,7 @@
   },
   "author": "Zaius, Inc.",
   "repository": "https://github.com/ZaiusInc/web-sdk-wrapper",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
