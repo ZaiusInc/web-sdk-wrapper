@@ -8,6 +8,10 @@
   "scripts": {
     "prepublishOnly": "rollup -c"
   },
+  "files": [
+    "dist/",
+    "src/"
+  ],
   "author": "Zaius, Inc.",
   "repository": "https://github.com/ZaiusInc/web-sdk-wrapper",
   "license": "Apache-2.0",
