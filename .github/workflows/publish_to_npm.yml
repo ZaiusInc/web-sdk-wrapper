@@ -20,9 +20,6 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Publish
-        run: yarn pack
-#        run: yarn publish --verbose --access public --registry https://registry.npmjs.org
-#        env:
-#          NODE_AUTH_TOKEN: ${{ secrets.npmJSToken }}
-      - name: Unpack
-        run: tar -zxvf zaiusinc-web-sdk-v1.0.0.tgz
+        run: yarn publish --verbose --access public --registry https://registry.npmjs.org
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
