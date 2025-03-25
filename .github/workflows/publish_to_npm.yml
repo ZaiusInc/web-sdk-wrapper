@@ -21,7 +21,7 @@ jobs:
         run: yarn install
       - name: Publish
         run: |
-          rollup -c
+          yarn rollup -c
           yarn pack
 #        run: yarn publish --verbose --access public --registry https://registry.npmjs.org
 #        env:
