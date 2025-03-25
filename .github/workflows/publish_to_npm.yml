@@ -10,3 +10,19 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          always-auth: true
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+          scope: '@zaiusinc'
+      - name: Install dependencies
+        run: yarn install
+      - name: Publish
+        run: yarn pack
+#        run: yarn publish --verbose --access public --registry https://registry.npmjs.org
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.npmJSToken }}
+      - name: Unpack
+        run: tar -zxvf zaiusinc-web-sdk-v1.0.0.tgz
